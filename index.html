@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Checklist for the LSST DESC Meeting (CMU 2018)</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" rel="stylesheet">
+  <style>
+    html {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #333;
+    }
+
+    a:any-link {
+      color: rgb(6, 155, 255);
+    }
+
+    #page {
+      max-width: 1000px;
+      margin: 16px auto;
+      padding: 0 12px 200px 12px;
+    }
+
+    @supports (zoom:2) {
+      input[type=checkbox] {
+        zoom: 2;
+      }
+    }
+
+    @supports not (zoom:2) {
+      input[type=checkbox] {
+        transform: scale(1.6);
+        margin: 5px;
+      }
+    }
+
+    .progress-container {
+      width: 100%;
+      height: 32px;
+      background-color: #EEE;
+      margin: 30px 0;
+    }
+
+    #progress {
+      width: 1%;
+      height: 100%;
+      float: left;
+      background-color: rgb(6, 155, 255);
+    }
+
+    .item {
+      margin: 20px 0;
+      line-height: 1.2;
+      font-size: 120%;
+      display: flex;
+    }
+
+    .box {
+      margin-right: 12px;
+      vertical-align: top;
+    }
+
+    .text {
+      vertical-align: top;
+      flex-grow: 1;
+    }
+
+    .done {
+      text-decoration: line-through;
+      color: #999;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="page">
+    <h1>Checklist for the Upcoming LSST DESC Meeting</h1>
+    <p>Here’s a few useful things you can do to prepare yourself for the upcoming DESC meeting at CMU!</p>
+
+    <div class="progress-container">
+      <div id="progress"></div>
+    </div>
+
+    <div class="item">
+      <div class="box">
+        <input type="checkbox">
+      </div>
+      <div class="text">Check out the
+        <a href="https://confluence.slac.stanford.edu/x/qXPVDQ">agenda page on Confluence</a>. Bookmark this link in your browsers and phones for easy access. Make sure you remember
+        your Confluence password.</div>
+    </div>
+
+    <div class="item">
+      <div class="box">
+        <input type="checkbox">
+      </div>
+      <div class="text">Join the Slack channel
+        <a href="https://lsstc.slack.com/messages/C90AMAG80/">#desc-collab-meeting</a> to hear announcements and to chat with meeting participants (both in-person and virtual).
+        Also join
+        <a href="https://lsstc.slack.com/messages/C2M8FG5A6/">#desc-hack-sprint</a> if you are going to participate in the Friday Hack Day. </div>
+    </div>
+
+    <div class="item">
+      <div class="box">
+        <input type="checkbox">
+      </div>
+      <div class="text">Make sure you have a NERSC account and you remember your password (maybe you use SSH keys, but note that you do need
+        your password to use NERSC's jupyter notebook)!
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="box">
+        <input type="checkbox">
+      </div>
+      <div class="text">Log in to Cori and install DESC’s jupyter kernels.
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="box">
+        <input type="checkbox">
+      </div>
+      <div class="text">(For DE School participants) To make the most of the 3x2 session, please consider installing the Core Cosmology Library
+        (CCL) in your laptops or familiarising yourself with the NERSC installation. Check out the
+        <a href="https://confluence.slac.stanford.edu/x/zHXVDQ">DE School page</a> for more details.
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="box">
+        <input type="checkbox">
+      </div>
+      <div class="text">(For Hack Day participants) Visit our
+        <a href="https://confluence.slac.stanford.edu/x/jxLoDQ">Hack Day Confluence page</a> to browse and add hack/sprint ideas! Remember, not all hacks and sprints have to be
+        carried out, so be bold when adding ideas! Also add your name and departure time at the bottom at the page!
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="box">
+        <input type="checkbox">
+      </div>
+      <div class="text">(For virtual participants) Zoom connection instructions are consolidated at [link?]. If you want to be heard in plenary
+        sessions, please raise your hand in Zoom or use the Slack channel (
+        <a href="https://lsstc.slack.com/messages/C90AMAG80/">#desc-collab-meeting</a>) and our coordinators will announce your presence. Please request coordinators for the parallel
+        sessions if you need them.
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="box">
+        <input type="checkbox">
+      </div>
+      <div class="text">Remind yourselves of our
+        <a href="http://lsstdesc.org/sites/default/files/LSST_DESC_Professional_Conduct.pdf">Code of Conducts</a> and also the
+        <a href="https://goo.gl/iqsePQ">Virtual Meeting Best Practices</a>. Note that many of the Best Practices apply to non-virtual meetings as well.
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="box">
+        <input type="checkbox">
+      </div>
+      <div class="text">To make sure you will be free from technical difficulties, check out our
+        <a href="https://goo.gl/dBuaXq">Tech Cheat Sheet</a> and bookmark it!
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="box">
+        <input type="checkbox">
+      </div>
+      <div class="text">If you will be driving or will need a ride, visit the carpooling page [link?] to provide/request rides.
+      </div>
+    </div>
+    <div class="item">
+      <div class="box">
+        <input type="checkbox">
+      </div>
+      <div class="text">If you use social media professionally, we will be using the #lsstdesc hashtag when reporting highlights from the meeting!
+      </div>
+    </div>
+
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+  <script>
+    var animate_time = 0;
+    const cookie_key = "lsst_desc_pre_meeting_checklist";
+
+    $("input").change(function () {
+      let target = $("div.text").eq($("input").index(this));
+      if (this.checked) target.addClass("done");
+      else target.removeClass("done");
+      let w = 1 + 99 / $("input").length * $("input:checked").length;
+      $("#progress").animate({ width: w + "%" }, animate_time);
+      let record = $("input").map(function () { return this.checked ? 1 : 0; }).toArray().join("");
+      Cookies.set(cookie_key, record, { expires: 21, path: '/pre-meeting-checklist' });
+    });
+
+    var read_cookie = function () {
+      var record = Cookies.get(cookie_key);
+      if (record != undefined) {
+        record.split('').forEach((c, i) => {
+          if (c == "1") {
+            let target = $("input").eq(i);
+            target.attr("checked", true);
+            target.change();
+          }
+        });
+      }
+    }
+
+    read_cookie()
+    animate_time = 500;
+  </script>
+
+</body>
+
+</html>
