@@ -70,6 +70,11 @@
       text-decoration: line-through;
       color: #999;
     }
+
+    .footer{
+      text-align: center;
+      margin-top: 72px;
+    }
   </style>
 </head>
 
@@ -183,22 +188,25 @@
       </div>
     </div>
 
+    <div class="footer">This site uses cookies to keep track your checklist progress. The data are stored in your browser locally only.</div>
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
   <script>
-    var animate_time = 0;
     const cookie_key = "lsst_desc_pre_meeting_checklist";
 
+    const get_progress = function () {
+      return (1 + 99 / $("input").length * $("input:checked").length);
+    }
+
     $("input").change(function () {
-      let target = $("div.text").eq($("input").index(this));
+      var target = $("div.text").eq($("input").index(this));
       if (this.checked) target.addClass("done");
       else target.removeClass("done");
-      let w = 1 + 99 / $("input").length * $("input:checked").length;
-      $("#progress").animate({ width: w + "%" }, animate_time);
-      let record = $("input").map(function () { return this.checked ? 1 : 0; }).toArray().join("");
-      Cookies.set(cookie_key, record, { expires: 21, path: '/pre-meeting-checklist' });
+      $("#progress").animate({ width: get_progress() + "%" }, 500);
+      var record = $("input").map(function () { return this.checked ? 1 : 0; }).toArray().join("");
+      Cookies.set(cookie_key, record, { expires: 21, path: "/pre-meeting-checklist/" });
     });
 
     var read_cookie = function () {
@@ -206,16 +214,14 @@
       if (record != undefined) {
         record.split('').forEach((c, i) => {
           if (c == "1") {
-            let target = $("input").eq(i);
-            target.attr("checked", true);
-            target.change();
+            $("input").eq(i).attr("checked", true);
+            $("div.text").eq(i).addClass("done");
           }
         });
+        $("#progress").css("width", get_progress() + "%");
       }
     }
-
-    read_cookie()
-    animate_time = 500;
+    read_cookie();
   </script>
 
 </body>
