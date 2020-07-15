@@ -43,10 +43,16 @@
      }
 
      #progress {
-          width: 1%;
+          width: 0.5%;
           height: 100%;
           float: left;
           background-color: #66B66C;
+     }
+
+     #progress-text{
+          text-align: right;
+          color: #fff;
+          padding: 0.35em 0.3em 0 0;
      }
 
      .item {
@@ -84,7 +90,7 @@
           <h3>Here are a few useful things you can do to prepare yourself for the DESC virtual meeting!</h3>
      <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
      <div class="progress-container">
-          <div id="progress"></div>
+          <div id="progress"><div id="progress-text"></div></div>
      </div>
 
      <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
@@ -274,17 +280,25 @@
      <script>
      const cookie_key = "lsst_desc_pre_meeting_checklist_july2020";
      const get_progress = function () {
-          return (1 + 99 / $("input").length * $("input:checked").length);
+          return (0.5 + 99.5 / $("input").length * $("input:checked").length);
+     }
+
+     const display_progress = function (animate){
+          var p = get_progress();
+          if (animate) $("#progress").animate({ width: p + "%" }, 500);
+          else $("#progress").css("width", p + "%");
+          if (p > 1) $("#progress-text").text(Math.floor(p) + "%");
+          else $("#progress-text").text("");
      }
 
      $("input").change(function () {
           var target = $("div.text").eq($("input").index(this));
           if (this.checked) target.addClass("done");
           else target.removeClass("done");
-          $("#progress").animate({ width: get_progress() + "%" }, 500);
+          display_progress(1);
           var record = $("input").map(function () { return this.checked ? 1 : 0; }).toArray().join("");
           Cookies.set(cookie_key, record, { expires: 21, path: "/pre-meeting-checklist/" });
-          });
+     });
 
      var read_cookie = function () {
           var record = Cookies.get(cookie_key);
@@ -295,8 +309,11 @@
                          $("div.text").eq(i).addClass("done");
                     }
                });
-               $("#progress").css("width", get_progress() + "%");
           }
+          else{
+               $("input").attr("checked", false);
+          }
+          display_progress();
      }
      read_cookie();
      </script>
